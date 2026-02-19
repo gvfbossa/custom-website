@@ -10,21 +10,23 @@ import { TestimonialsComponent } from "./components/testimonials/testimonials.co
 import { ContactComponent } from "./components/contact/contact.component";
 import { CtaComponent } from "./components/cta/cta.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { ChatComponent } from "./components/chat/chat.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    HeaderComponent, 
-    HeroComponent, 
-    AboutComponent, 
-    ServicesComponent, 
-    ProductComponent, 
-    PortfolioComponent, 
-    TestimonialsComponent, 
-    ContactComponent, 
-    FooterComponent
-  ],
+    HeaderComponent,
+    HeroComponent,
+    AboutComponent,
+    ServicesComponent,
+    ProductComponent,
+    PortfolioComponent,
+    TestimonialsComponent,
+    ContactComponent,
+    FooterComponent,
+    ChatComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,94 +1,82 @@
-<section id="services" class="py-32 bg-gradient-to-b from-blue-50 via-white to-blue-50">
-  <div class="max-w-7xl mx-auto px-6">
+<section id="services" class="pt-32 pb-14 bg-gradient-to-br from-white via-blue-50 to-white">
+  <div class="max-w-5xl mx-auto px-6 text-center">
 
-    <!-- Badge azul da seção -->
     <p class="text-sm font-semibold text-blue-600 tracking-widest uppercase">
       Seus Serviços e Produtos
     </p>
 
-    <!-- Título + subfrase -->
-    <h2 class="mt-4 text-4xl md:text-5xl font-bold text-gray-900 leading-tight max-w-4xl">
+    <h2 class="mt-4 text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
       Descubra como nossos 
       <span class="text-primary">produtos e serviços</span> 
       <span class="text-yellow-400"> transformam seu negócio</span>
     </h2>
-    <p class="mt-4 text-lg text-gray-600 max-w-3xl">
-      Cada solução foi pensada para <span class="font-semibold text-gray-900">aumentar conversão</span>, fortalecer sua marca e gerar resultados reais.
+
+    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+      Cada solução foi pensada para 
+      <span class="font-semibold text-gray-900">aumentar conversão</span>, 
+      fortalecer sua marca e gerar resultados reais.
     </p>
 
-    <!-- Carrossel horizontal -->
-    <div class="mt-12 relative overflow-x-auto no-scrollbar">
-      <div class="flex gap-6 md:gap-8 items-start">
+    <!-- Carousel -->
+    <div 
+      class="relative mt-12 flex items-center justify-center"
+      (mouseenter)="pauseAutoplay()"
+      (mouseleave)="startAutoplay()"
+    >
 
-        <!-- Card 1 - Produto Principal -->
-        <div class="flex-shrink-0 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition duration-300 overflow-hidden relative">
-          <div class="relative">
-            <img src="https://via.placeholder.com/288x200" alt="Produto 1" class="bg-gray-300 w-full h-52 object-cover">
-            <!-- Badge amarelo sobre a imagem -->
-            <span class="absolute top-4 left-4 px-3 py-1 bg-yellow-400 text-gray-900 text-xs font-semibold rounded-full shadow-lg">
-              Destaque
-            </span>
-          </div>
-          <div class="p-5">
-            <h4 class="text-xl font-bold text-primary">Produto / Serviço 1</h4>
-            <p class="mt-3 text-gray-700 text-sm leading-relaxed">
-              Benefício principal de forma direta, mostrando impacto real.
-            </p>
-          </div>
-        </div>
+      <div class="relative w-full max-w-2xl min-h-[380px]">
 
-        <!-- Card 2 -->
-        <div class="flex-shrink-0 w-72 bg-white rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 overflow-hidden">
-          <img src="https://via.placeholder.com/288x200" alt="Produto 2" class="bg-gray-300 w-full h-52 object-cover">
-          <div class="p-5">
-            <h4 class="text-lg font-semibold text-primary">Produto / Serviço 2</h4>
-            <p class="mt-2 text-gray-600 text-sm leading-relaxed">
-              Mostre como sua solução agrega <span class="font-semibold text-blue-600">valor real</span>.
-            </p>
-          </div>
-        </div>
+        <div
+          *ngFor="let service of services; let i = index"
+          class="absolute inset-0 transition-all duration-700 ease-in-out"
+          [ngClass]="{
+            'opacity-100 scale-100 z-10': currentIndex === i,
+            'opacity-0 scale-95 z-0': currentIndex !== i
+          }"
+        >
+          <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
 
-        <!-- Card 3 -->
-        <div class="flex-shrink-0 w-72 bg-white rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 overflow-hidden">
-          <img src="https://via.placeholder.com/288x200" alt="Produto 3" class="bg-gray-300 w-full h-52 object-cover">
-          <div class="p-5">
-            <h4 class="text-lg font-semibold text-primary">Produto / Serviço 3</h4>
-            <p class="mt-2 text-gray-600 text-sm leading-relaxed">
-              Resultados e benefícios de forma objetiva, transmitindo <span class="font-semibold text-blue-600">confiança</span>.
-            </p>
-          </div>
-        </div>
+            <img 
+              [src]="service.image" 
+              [alt]="service.title"
+              class="w-full h-56 object-cover"
+            >
 
-        <!-- Card 4 -->
-        <div class="flex-shrink-0 w-72 bg-white rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 overflow-hidden">
-          <img src="https://via.placeholder.com/288x200" alt="Produto 4" class="bg-gray-300 w-full h-52 object-cover">
-          <div class="p-5">
-            <h4 class="text-lg font-semibold text-primary">Produto / Serviço 4</h4>
-            <p class="mt-2 text-gray-600 text-sm leading-relaxed">
-              Mostre impacto real e como sua solução cria <span class="font-semibold text-blue-600">credibilidade</span>.
-            </p>
-          </div>
-        </div>
+            <div class="p-8 text-left">
+              <h4 class="text-2xl font-bold text-primary">
+                {{ service.title }}
+              </h4>
 
-        <!-- Card 5 -->
-        <div class="flex-shrink-0 w-72 bg-white rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 overflow-hidden">
-          <img src="https://via.placeholder.com/288x200" alt="Produto 5" class="bg-gray-300 w-full h-52 object-cover">
-          <div class="p-5">
-            <h4 class="text-lg font-semibold text-primary">Produto / Serviço 5</h4>
-            <p class="mt-2 text-gray-600 text-sm leading-relaxed">
-              Mostre como sua solução gera <span class="font-semibold text-blue-600">impacto real</span> e benefícios concretos.
-            </p>
+              <p class="mt-4 text-gray-600 leading-relaxed">
+                {{ service.description }}
+              </p>
+            </div>
+
           </div>
         </div>
 
       </div>
+
+      <!-- Indicators -->
+      <div class="absolute -bottom-8 flex gap-3">
+        <button
+          *ngFor="let service of services; let i = index"
+          (click)="goToSlide(i)"
+          class="w-3 h-3 rounded-full transition-all duration-300"
+          [ngClass]="{
+            'bg-primary w-6': currentIndex === i,
+            'bg-gray-300 hover:bg-gray-400': currentIndex !== i
+          }"
+        ></button>
+      </div>
+
     </div>
 
-    <!-- CTA -->
-    <div class="mt-16 text-center">
-      <a href="#contact" 
-         class="inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
-        💥 Quero meu site agora
+    <!-- CTA (DE VOLTA 😎) -->
+    <div class="mt-20 text-center">
+      <a href="#contact"
+         class="inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold shadow-lg transition duration-300 hover:shadow-2xl hover:scale-105 active:scale-95">
+        🚀 Quero meu site agora
       </a>
     </div>
 

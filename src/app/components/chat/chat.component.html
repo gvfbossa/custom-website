@@ -1,0 +1,84 @@
+<div class="fixed bottom-6 right-6 z-50">
+
+  <!-- BOTÃO -->
+  <button
+    (click)="toggleChat()"
+    class="bg-blue-600 hover:bg-blue-700 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition duration-300 animate-bounce">
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="currentColor"
+         class="w-6 h-6">
+      <path d="M2 5a3 3 0 013-3h14a3 3 0 013 3v10a3 3 0 01-3 3H8l-4 4V5z"/>
+    </svg>
+  </button>
+
+  <!-- CHAT BOX -->
+  <div *ngIf="chatOpen"
+       class="absolute bottom-20 right-0 w-80 bg-white rounded-xl shadow-2xl p-5 space-y-4 animate-fade-in border border-gray-200">
+
+    <!-- HEADER -->
+    <div class="flex items-center justify-between border-b pb-3">
+      <div>
+        <div class="text-sm font-semibold text-gray-800">
+          Bossa Web Solutions
+        </div>
+        <div class="text-xs text-blue-600">
+          ● Online agora
+        </div>
+      </div>
+
+      <button (click)="toggleChat()" class="text-gray-400 hover:text-gray-700">
+        ✕
+      </button>
+    </div>
+
+    <!-- STEP 1 -->
+    <div *ngIf="step === 1" class="space-y-3">
+
+      <div class="bg-blue-50 p-3 rounded-lg text-sm text-gray-700">
+        👋 Olá! Quer criar um site profissional para seu negócio?
+      </div>
+
+      <button
+        (click)="nextStep()"
+        class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 py-2 px-4 rounded-lg text-sm font-semibold transition">
+        Sim, quero 🚀
+      </button>
+
+    </div>
+
+    <!-- DIGITANDO -->
+    <div *ngIf="isTyping"
+         class="text-xs text-gray-400 animate-pulse">
+      digitando...
+    </div>
+
+    <!-- STEP 2 -->
+    <div *ngIf="step === 2" class="space-y-3">
+
+      <div class="bg-blue-50 p-3 rounded-lg text-sm text-gray-700">
+        💥 Perfeito! Me conta rapidinho: qual é o seu negócio?
+      </div>
+
+      <input
+        [(ngModel)]="business"
+        type="text"
+        placeholder="Digite o tipo de seu negócio aqui"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+
+      <button
+        (click)="goToWhatsApp()"
+        [disabled]="!business || !business.trim()"
+        class="w-full py-2 rounded-lg text-sm font-semibold transition"
+        [ngClass]="
+            business && business.trim()
+            ? 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer'
+            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+        ">
+        💬 Falar no WhatsApp
+      </button>
+    </div>
+  </div>
+</div>

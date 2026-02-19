@@ -1,103 +1,273 @@
-<section id="contact" class="py-24 bg-silver">
+<section id="contact" class="pt-32 pb-14 bg-silver">
   <div class="max-w-7xl mx-auto px-6 space-y-16">
-
     <!-- Mini-badge -->
-    <p class="text-sm font-semibold text-blue-600 tracking-widest uppercase">
-      Contato
-    </p>
+    <div>
+      <p
+        class="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-4"
+      >
+        Contato
+      </p>
 
-    <!-- Título -->
-    <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 max-w-3xl">
-      Fale com a <span class="text-blue-600">gente</span> e comece seu projeto
-    </h3>
+      <!-- Título -->
+      <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 max-w-3xl">
+        Fale <span class="text-blue-600">conosco</span> e tenha seu próprio site
+      </h3>
+    </div>
 
     <!-- Subfrase -->
     <p class="mt-2 text-lg text-gray-700 max-w-2xl">
-      Tire dúvidas, peça orçamento ou veja como podemos transformar seus resultados.
+      Tire dúvidas, peça orçamento e veja como podemos transformar seus
+      resultados.
     </p>
 
     <div class="mt-12 md:grid md:grid-cols-2 gap-12 items-start">
-
-      <!-- Formulário -->
-      <form class="bg-white p-8 md:p-12 rounded-2xl shadow-md space-y-6">
+      <form
+        *ngIf="!enviado"
+        #contactForm="ngForm"
+        (ngSubmit)="onSubmit(contactForm)"
+        class="bg-white p-8 md:p-12 rounded-2xl shadow-md space-y-6"
+      >
         <div>
           <label class="block text-sm font-medium text-gray-700">Nome</label>
-          <input type="text" placeholder="Seu nome"
-                 class="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/50 placeholder-gray-400 transition duration-300">
+          <input
+            type="text"
+            name="nome"
+            ngModel
+            required
+            placeholder="Seu nome"
+            class="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          />
         </div>
 
         <div>
           <label class="block text-sm font-medium text-gray-700">Email</label>
-          <input type="email" placeholder="seu&commat;email.com"
-                 class="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/50 placeholder-gray-400 transition duration-300">
+          <input
+            type="email"
+            name="email"
+            ngModel
+            required
+            placeholder="seu&commat;email.com"
+            class="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          />
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-gray-700">Mensagem</label>
-          <textarea rows="4" placeholder="Digite sua mensagem..."
-                    class="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/50 placeholder-gray-400 transition duration-300"></textarea>
+          <label class="block text-sm font-medium text-gray-700"
+            >Mensagem</label
+          >
+          <textarea
+            name="mensagem"
+            ngModel
+            required
+            rows="4"
+            placeholder="Digite sua mensagem..."
+            class="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          ></textarea>
         </div>
 
-        <button type="submit"
-                class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold shadow-md hover:shadow-xl hover:scale-105 transition duration-300">
-          Enviar Mensagem
+        <button
+          type="submit"
+          [disabled]="contactForm.invalid || enviando"
+          class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex items-center justify-center gap-2"
+        >
+          <span *ngIf="!enviando">Enviar Mensagem</span>
+
+          <span *ngIf="enviando" class="flex items-center gap-2">
+            <span
+              class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"
+            ></span>
+            Enviando...
+          </span>
         </button>
       </form>
 
-      <!-- Coluna da direita -->
-      <div class="space-y-8 md:pt-6">
+      <!-- Mensagem de sucesso -->
+      <div
+        *ngIf="enviado"
+        class="bg-white p-12 rounded-2xl shadow-md text-center animate-fade-in"
+      >
+        <h4 class="text-2xl font-bold text-gray-900">
+          🎉 Mensagem enviada com sucesso!
+        </h4>
+        <p class="mt-4 text-gray-700">
+          Obrigado pelo contato! Responderemos em breve.
+        </p>
+      </div>
 
+      <!-- Coluna da direita -->
+      <div class="space-y-10 md:pt-6">
         <!-- WhatsApp -->
-        <a href="https://wa.me/5500000000000" target="_blank"
-           class="flex items-center gap-4 text-gray-700 hover:text-green-500 transition">
-          <div class="w-10 h-10 bg-green-400 rounded flex items-center justify-center text-white font-bold">W</div>
-          <span class="font-semibold">WhatsApp: (00) 00000-0000</span>
+        <a
+          href="https://api.whatsapp.com/send/?phone=5511953468808"
+          target="_blank"
+          class="flex items-center gap-4 text-gray-700 hover:text-green-600 transition group"
+        >
+          <div
+            class="w-11 h-11 bg-green-500 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition"
+          >
+            <!-- WhatsApp SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5 fill-current"
+            >
+              <path
+                d="M20.52 3.48A11.86 11.86 0 0012.05 0C5.48 0 .11 5.36.11 11.94c0 2.1.55 4.15 1.59 5.95L0 24l6.28-1.64a11.9 11.9 0 005.77 1.48h.01c6.57 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.48-8.42z"
+              />
+            </svg>
+          </div>
+
+          <span class="font-semibold">WhatsApp: (11) 95346-8808</span>
         </a>
 
         <!-- Email -->
-        <a href="mailto:contato&commat;seudominio.com"
-           class="flex items-center gap-4 text-gray-700 hover:text-blue-600 transition">
-          <div class="w-10 h-10 bg-blue-400 rounded flex items-center justify-center text-white font-bold">E</div>
-          <span class="font-semibold">Email: contato&commat;seudominio.com</span>
+        <a
+          href="mailto:contato&commat;bossawebsolutions.com.br"
+          class="flex items-center gap-4 text-gray-700 hover:text-blue-600 transition group"
+        >
+          <div
+            class="w-11 h-11 bg-blue-500 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition"
+          >
+            <!-- Email SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 fill-current"
+              viewBox="0 0 24 24"
+            >
+              <path d="M2 4h20v16H2V4zm10 7L4 6v12h16V6l-8 5z" />
+            </svg>
+          </div>
+
+          <span class="font-semibold"
+            >Email: contato&commat;bossawebsolutions.com.br</span
+          >
         </a>
 
         <!-- Redes Sociais -->
-        <div class="flex items-center gap-4">
-          <a href="https://instagram.com/seuusuario" target="_blank" class="transition hover:scale-110">
-            <div class="w-10 h-10 bg-pink-400 rounded flex items-center justify-center font-bold text-white">IG</div>
+        <div class="flex items-center gap-4 pt-2">
+          <!-- Instagram -->
+          <a
+            href="https://instagram.com/bossawebsolutions"
+            target="_blank"
+            class="w-11 h-11 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5 fill-current"
+            >
+              <path
+                d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 15a5 5 0 110-10 5 5 0 010 10zm6.5-10.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"
+              />
+            </svg>
           </a>
-          <a href="https://linkedin.com/in/seuusuario" target="_blank" class="transition hover:scale-110">
-            <div class="w-10 h-10 bg-blue-700 rounded flex items-center justify-center font-bold text-white">LI</div>
+
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/company/109991620"
+            target="_blank"
+            class="w-11 h-11 bg-blue-700 rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5 fill-current"
+            >
+              <path
+                d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.3h.07c.66-1.24 2.27-2.55 4.68-2.55 5 0 5.92 3.29 5.92 7.56V24h-5v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.97 2.01-2.97 4.1V24h-5V8z"
+              />
+            </svg>
           </a>
-          <a href="https://facebook.com/seuusuario" target="_blank" class="transition hover:scale-110">
-            <div class="w-10 h-10 bg-blue-500 rounded flex items-center justify-center font-bold text-white">FB</div>
+
+          <!-- Facebook -->
+          <a
+            href="https://www.facebook.com/profile.php?id=61558090378155"
+            target="_blank"
+            class="w-11 h-11 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5 fill-current"
+            >
+              <path
+                d="M22 12a10 10 0 10-11.5 9.87v-6.99H8v-2.88h2.5V9.41c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.21.19 2.21.19v2.43h-1.24c-1.22 0-1.6.76-1.6 1.54v1.85H16l-.4 2.88h-2.37v6.99A10 10 0 0022 12z"
+              />
+            </svg>
           </a>
         </div>
 
         <!-- Endereço -->
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 bg-gray-400 rounded flex items-center justify-center text-white font-bold">📍</div>
+        <div class="flex items-start gap-4 pt-4">
+          <div
+            class="w-11 h-11 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-md"
+          >
+            <!-- Map Fold SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 4v14M15 6v14"
+              />
+            </svg>
+          </div>
+
           <div>
             <div class="font-semibold text-gray-900">Endereço</div>
-            <a href="https://www.google.com/maps?q=Rua+Exemplo,+123" target="_blank"
-              class="text-gray-700 hover:text-blue-600 underline transition">
-              Rua Exemplo, 123 - Bairro, Cidade - UF
+            <a
+              href="https://www.google.com/maps?q=Rua+Endereço+do+seu+Negócio,+10"
+              target="_blank"
+              class="text-gray-700 hover:text-blue-600 underline transition"
+            >
+              Rua Endereço do seu Negócio, 10
             </a>
           </div>
         </div>
 
         <!-- Horário -->
         <div class="flex items-start gap-4">
-          <div class="w-10 h-10 bg-yellow-400 rounded flex items-center justify-center text-white font-bold">⏰</div>
+          <div
+            class="w-11 h-11 bg-yellow-500 rounded-xl flex items-center justify-center text-white shadow-md"
+          >
+            <!-- Clock SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 7v5l3 3"
+              />
+            </svg>
+          </div>
+
           <div>
-            <div class="font-semibold text-gray-900">Horário de Funcionamento</div>
-            <div class="text-gray-700">Seg-Sex: 08:00 - 18:00<br>Sáb: 08:00 - 12:00</div>
+            <div class="font-semibold text-gray-900">
+              Horário de Funcionamento
+            </div>
+            <div class="text-gray-700">
+              Seg-Sex: 09:00 - 20:00<br />
+              Sáb: 10:00 - 16:00
+            </div>
           </div>
         </div>
-
       </div>
-
     </div>
-
   </div>
 </section>

@@ -17,22 +17,22 @@ export class ServicesComponent implements OnInit, OnDestroy {
     {
       title: 'Site Profissional',
       description: 'Sites modernos, rápidos e pensados para converter visitantes em clientes reais.',
-      image: ''
+      image: 'assets/images/services1.jpeg'
     },
     {
       title: 'Landing Pages',
       description: 'Páginas estratégicas para campanhas, lançamentos e captação de leads.',
-      image: ''
+      image: 'assets/images/services2.jpeg'
     },
     {
       title: 'Otimização & Performance',
       description: 'Melhoria de velocidade, SEO e experiência do usuário.',
-      image: ''
+      image: 'assets/images/services3.jpeg'
     },
     {
       title: 'Manutenção & Suporte',
-      description: 'Atualizações, segurança e acompanhamento contínuo do seu projeto.',
-      image: ''
+      description: 'Planos para atualizações e suporte para acompanhamento contínuo do seu projeto.',
+      image: 'assets/images/services4.jpeg'
     }
   ];
 

@@ -27,7 +27,7 @@ export class ContactComponent {
     formData.append('nome', form.value.nome);
     formData.append('email', form.value.email);
     formData.append('mensagem', form.value.mensagem);
-    formData.append('_subject', 'Novo Lead - TopSite');
+    formData.append('_subject', 'Novo Lead - SiteFácilJá');
     formData.append('_captcha', 'false');
     formData.append('_replyto', form.value.email);
 

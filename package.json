@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "rm -rf dist/ && ng build --configuration production && cp src/sitemap.xml dist/custom-website/ && cp src/robots.txt dist/custom-website/np && firebase deploy"
+    "deploy": "rm -rf dist/ && ng build --configuration production && cp src/assets/images/favicon.ico dist/custom-website && cp src/sitemap.xml dist/custom-website/ && cp src/robots.txt dist/custom-website/np && firebase deploy"
   },
   "private": true,
   "dependencies": {

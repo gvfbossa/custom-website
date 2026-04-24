@@ -1,31 +1,36 @@
-<section id="contact" class="pt-32 pb-14 bg-silver">
+<section id="contact" class="pt-20 md:pt-28 pb-10 md:pb-14 bg-silver">
   <div class="max-w-7xl mx-auto px-6 space-y-16">
     <!-- Mini-badge -->
     <div>
       <p
-        class="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-4"
+        class="text-xs md:text-sm font-semibold text-primary tracking-widest uppercase"
       >
         Contato
       </p>
 
       <!-- Título -->
-      <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 max-w-3xl">
-        Fale <span class="text-blue-600">conosco</span> e tenha seu próprio site
-      </h3>
+      <h2
+        class="mt-3 md:mt-4 text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 leading-snug md:leading-tight text-center md:text-left"
+      >
+        Fale <span class="text-blue-600">conosco</span> e descubra como ter o
+        seu site
+      </h2>
+
+      <!-- Subfrase -->
+      <p
+        class="mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl"
+      >
+        Tire dúvidas, peça orçamento e veja como podemos transformar seus
+        resultados.
+      </p>
     </div>
 
-    <!-- Subfrase -->
-    <p class="mt-2 text-lg text-gray-700 max-w-2xl">
-      Tire dúvidas, peça orçamento e veja como podemos transformar seus
-      resultados.
-    </p>
-
-    <div class="mt-12 md:grid md:grid-cols-2 gap-12 items-start">
+    <div class="md:mt-12 mt-10 md:grid md:grid-cols-2 gap-12 items-start">
       <form
         *ngIf="!enviado"
         #contactForm="ngForm"
         (ngSubmit)="onSubmit(contactForm)"
-        class="bg-white p-8 md:p-12 rounded-2xl shadow-md space-y-6"
+        class="bg-white py-4 px-6 md:p-12 rounded-2xl shadow-md space-y-6"
       >
         <div>
           <label class="block text-sm font-medium text-gray-700">Nome</label>
@@ -95,107 +100,79 @@
       </div>
 
       <!-- Coluna da direita -->
-      <div class="space-y-10 md:pt-6">
+      <div class="space-y-8 md:space-y-10 md:pt-6 mt-6 md:mt-8">
         <!-- WhatsApp -->
         <a
           href="https://api.whatsapp.com/send/?phone=5511953468808"
           target="_blank"
-          class="flex items-center gap-4 text-gray-700 hover:text-green-600 transition group"
+          class="flex items-center gap-3 md:gap-4 text-gray-700 hover:text-green-600 transition group"
         >
           <div
-            class="w-11 h-11 bg-green-500 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition"
+            class="w-9 h-9 md:w-11 md:h-11 bg-green-500 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition"
           >
-            <!-- WhatsApp SVG -->
-            <svg
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-12 h-12"
-            >
-              <!-- Balão branco -->
+            <svg viewBox="0 0 32 32" class="w-7 h-7 md:w-12 md:h-12">
               <path
                 fill="#FFFFFF"
                 d="M16 7c-4.97 0-9 3.86-9 8.62 0 1.52.42 2.94 1.15 4.18L7 25l5.39-1.41c1.18.64 2.53 1.01 3.99 1.01 4.97 0 9-3.86 9-8.62S20.97 7 16 7z"
               />
-              <!-- Telefone verde dentro do balão -->
               <path
                 fill="#22C55E"
                 d="M20.23 17.37c-.28-.14-1.64-.81-1.9-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.37-.83-.74-1.4-1.66-1.56-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.36-.02-.5-.07-.14-.61-1.48-.84-2.03-.22-.53-.45-.46-.62-.47l-.53-.01c-.19 0-.48.07-.73.34-.25.28-.96.93-.96 2.28s.98 2.64 1.12 2.83c.14.19 1.94 2.96 4.7 4.15.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.64-.66 1.87-1.3.23-.64.23-1.2.16-1.31-.07-.12-.25-.19-.53-.33z"
               />
             </svg>
           </div>
-          <span class="font-semibold">WhatsApp: (11) 95346-8808</span>
+          <span class="font-medium text-sm md:font-semibold md:text-base">
+            WhatsApp: (11) 95346-8808
+          </span>
         </a>
 
         <!-- Email -->
         <a
           href="mailto:contato&commat;bossawebsolutions.com.br"
-          class="flex items-center gap-4 text-gray-700 hover:text-blue-600 transition group"
+          class="flex items-center gap-3 md:gap-4 text-gray-700 hover:text-blue-600 transition group"
         >
           <div
-            class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition"
+            class="w-9 h-9 md:w-12 md:h-12 bg-blue-500 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition"
           >
-            <!-- Email SVG -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-5 h-5 fill-current"
-              viewBox="0 0 24 24"
-            >
+            <svg class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24">
               <path d="M2 4h20v16H2V4zm10 7L4 6v12h16V6l-8 5z" />
             </svg>
           </div>
 
-          <span class="font-semibold"
-            >Email: contato&commat;bossawebsolutions.com.br</span
-          >
+          <span class="font-medium text-sm md:font-semibold md:text-base">
+            contato&commat;bossawebsolutions.com.br
+          </span>
         </a>
 
-        <!-- Redes Sociais -->
-        <div class="flex items-center gap-4 pt-2">
-          <!-- Instagram -->
+        <!-- Redes -->
+        <div class="flex items-center gap-3 md:gap-4 pt-1 md:pt-2">
           <a
-            href="https://instagram.com/bossawebsolutions"
-            target="_blank"
-            class="w-11 h-11 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
+            href="https://www.instagram.com/bossawebsolutions/" target="_blank"
+            class="w-9 h-9 md:w-11 md:h-11 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="w-5 h-5 fill-current"
-            >
+            <svg class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24">
               <path
                 d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 15a5 5 0 110-10 5 5 0 010 10zm6.5-10.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"
               />
             </svg>
           </a>
 
-          <!-- LinkedIn -->
           <a
-            href="https://www.linkedin.com/company/109991620"
-            target="_blank"
-            class="w-11 h-11 bg-blue-700 rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
+            href="https://www.linkedin.com/company/109991620/" target="_blank"
+            class="w-9 h-9 md:w-11 md:h-11 bg-blue-700 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="w-5 h-5 fill-current"
-            >
+            <svg class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24">
               <path
                 d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.3h.07c.66-1.24 2.27-2.55 4.68-2.55 5 0 5.92 3.29 5.92 7.56V24h-5v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.97 2.01-2.97 4.1V24h-5V8z"
               />
             </svg>
           </a>
 
-          <!-- Facebook -->
           <a
-            href="https://www.facebook.com/profile.php?id=61558090378155"
-            target="_blank"
-            class="w-11 h-11 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
+            href="https://www.facebook.com/people/Bossa-Web-Solutions/61558090378155/" target="_blank"
+            class="w-9 h-9 md:w-11 md:h-11 bg-blue-600 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="w-5 h-5 fill-current"
-            >
+            <svg class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24">
               <path
                 d="M22 12a10 10 0 10-11.5 9.87v-6.99H8v-2.88h2.5V9.41c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.21.19 2.21.19v2.43h-1.24c-1.22 0-1.6.76-1.6 1.54v1.85H16l-.4 2.88h-2.37v6.99A10 10 0 0022 12z"
               />
@@ -204,37 +181,30 @@
         </div>
 
         <!-- Endereço -->
-        <div class="flex items-start gap-4 pt-4">
+        <div class="flex items-start gap-3 md:gap-4 pt-3 md:pt-4">
           <div
-            class="w-11 h-11 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-md"
+            class="w-9 h-9 md:w-11 md:h-11 bg-blue-600 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md"
           >
-            <!-- Map Fold SVG -->
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-5 h-5 stroke-current"
+              class="w-4 h-4 md:w-5 md:h-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              stroke="currentColor"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M9 4v14M15 6v14"
-              />
+              <path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6z" />
+              <path d="M9 4v14M15 6v14" />
             </svg>
           </div>
 
           <div>
-            <div class="font-semibold text-gray-900">Endereço</div>
+            <div
+              class="font-medium md:font-semibold text-gray-900 text-sm md:text-base"
+            >
+              Endereço
+            </div>
             <a
-              href="https://www.google.com/maps?q=Rua+Endereço+do+seu+Negócio,+10"
-              target="_blank"
-              class="text-gray-700 hover:text-blue-600 underline transition"
+              href="https://www.google.com/maps/place/S%C3%A3o+Paulo,+State+of+S%C3%A3o+Paulo/@-23.6811632,-47.2191146,10z/data=!3m1!4b1!4m6!3m5!1s0x94ce448183a461d1:0x9ba94b08ff335bae!8m2!3d-23.5557714!4d-46.6395571!16zL20vMDIycGZt?entry=ttu&g_ep=EgoyMDI2MDQyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank"
+              class="text-gray-700 text-sm md:text-base hover:text-blue-600 underline cursor-pointer"
             >
               Rua Endereço do seu Negócio, 10
             </a>
@@ -242,32 +212,28 @@
         </div>
 
         <!-- Horário -->
-        <div class="flex items-start gap-4">
+        <div class="flex items-start gap-3 md:gap-4">
           <div
-            class="w-11 h-11 bg-yellow-500 rounded-xl flex items-center justify-center text-white shadow-md"
+            class="w-9 h-9 md:w-11 md:h-11 bg-yellow-500 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md"
           >
-            <!-- Clock SVG -->
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-5 h-5 stroke-current"
+              class="w-4 h-4 md:w-5 md:h-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              stroke="currentColor"
             >
               <circle cx="12" cy="12" r="9" />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 7v5l3 3"
-              />
+              <path d="M12 7v5l3 3" />
             </svg>
           </div>
 
           <div>
-            <div class="font-semibold text-gray-900">
+            <div
+              class="font-medium md:font-semibold text-gray-900 text-sm md:text-base"
+            >
               Horário de Funcionamento
             </div>
-            <div class="text-gray-700">
+            <div class="text-gray-700 text-sm md:text-base">
               Seg-Sex: 09:00 - 20:00<br />
               Sáb: 10:00 - 16:00
             </div>

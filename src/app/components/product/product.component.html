@@ -1,45 +1,56 @@
-<section id="product" class="pt-32 pb-14 bg-gradient-to-b from-white via-blue-50 to-white">
-  <p class="text-sm font-semibold text-blue-600 tracking-widest uppercase text-center mb-6">
-      Seu Carro Chefe
+<section id="product" class="pt-24 md:pt-32 pb-12 md:pb-14 bg-gradient-to-b from-white via-blue-50 to-white">
+  
+  <!-- Label -->
+  <p class="text-xs md:text-sm font-semibold text-blue-600 tracking-widest uppercase text-center mb-4 md:mb-6">
+    Seu Carro Chefe
   </p>
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-    <!-- Imagem do produto em contexto -->
-    <div class="bg-gray-300 rounded-2xl h-96 flex items-center justify-center overflow-hidden relative group">
-      <img src="assets/images/produto1.jpeg" 
-           alt="Produto em ação" 
-           class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-      <!-- Badge destaque -->
-      <span class="absolute top-4 right-4 px-3 py-1 bg-yellow-400 text-gray-900 text-xs font-semibold rounded-full shadow-lg">
+  <div class="max-w-[95%] md:max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+
+    <!-- IMAGEM -->
+    <div class="bg-gray-300 rounded-2xl cursor-pointer h-[260px] sm:h-[320px] md:h-96 flex items-center justify-center overflow-hidden relative group">
+
+      <img 
+        src="assets/images/produto1.jpeg" 
+        alt="Produto em ação" 
+        class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+      >
+
+      <!-- Badge -->
+      <span class="absolute top-3 right-3 md:top-4 md:right-4 px-2 py-1 md:px-3 md:py-1 bg-yellow-400 text-gray-900 text-[10px] md:text-xs font-semibold rounded-full shadow-lg">
         Destaque
       </span>
+
     </div>
 
-    <!-- Descrição + bullets + CTA -->
-    <div>
-      <!-- Título mais agressivo -->
-      <h3 class="text-4xl md:text-5xl font-bold text-gray-900 leading-snug">
-        O produto que <span class="text-primary">se vende sozinho</span> 🚀
+    <!-- TEXTO -->
+    <div class="text-center md:text-left">
+
+      <!-- Título -->
+      <h3 class="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 leading-snug">
+        O produto que <span class="text-primary">se vende sozinho</span>
       </h3>
 
-      <p class="mt-6 text-lg text-gray-600 max-w-md">
+      <!-- Descrição -->
+      <p class="mt-4 md:mt-6 text-base md:text-lg text-gray-600 max-w-md mx-auto md:mx-0">
         Aquele produto que <span class="font-semibold text-gray-900">aumenta sua conversão</span>, fortalece sua marca e gera resultados reais, sem esforço extra.
       </p>
 
-      <!-- Benefícios como mini-prova social -->
-      <ul class="mt-6 space-y-3 text-gray-700">
+      <!-- Benefícios -->
+      <ul class="mt-5 text-center md:mt-6 space-y-2 md:space-y-3 text-sm md:text-base text-gray-700 md:text-left max-w-md mx-auto md:mx-0">
         <li>✔ <span class="font-semibold text-primary">Triplique suas vendas</span> sem complicações</li>
         <li>✔ <span class="font-semibold text-yellow-400">Ganhe visibilidade instantânea</span> com clientes</li>
         <li>✔ <span class="font-semibold text-blue-600">Economize tempo</span> focando no que importa</li>
       </ul>
 
-      <!-- CTA mais agressivo -->
-      <div class="mt-8 flex gap-4">
+      <!-- CTA -->
+      <div class="mt-6 md:mt-8 flex justify-center md:justify-start">
         <a href="#contact"
-           class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-bold shadow-lg hover:shadow-2xl transition duration-300">
-          🚀 Quero meu site agora para expor meu produto
+          class="bg-yellow-400 text-black px-5 md:px-6 py-3 rounded-lg text-sm md:text-base font-bold shadow-lg hover:shadow-2xl transition duration-300">
+          🚀 Quero meu site agora
         </a>
       </div>
+
     </div>
 
   </div>

@@ -35,15 +35,15 @@
           [ngClass]="{
             'opacity-100 scale-100 z-10': currentIndex === i,
             'opacity-0 scale-95 z-0': currentIndex !== i,
-          }"
-        >
+          }">
+          
           <div class="relative rounded-3xl shadow-xl overflow-hidden h-full">
             
             <!-- IMAGEM -->
             <img
               [src]="service.image"
               [alt]="service.title"
-              class="absolute inset-0 w-full h-full object-cover"
+              class="absolute inset-0 w-full h-full "
             />
 
             <!-- CONTEÚDO -->

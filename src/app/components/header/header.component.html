@@ -1,5 +1,5 @@
 <header
-  class="fixed top-0 left-0 w-full backdrop-blur-sm bg-white/80 shadow-sm z-50 transition-all"
+  class="fixed top-0 left-0 w-full backdrop-blur-sm bg-bg-main/80 shadow-sm z-50 transition-all"
 >
   <div
     class="max-w-7xl mx-auto px-5 md:px-6 py-4 flex justify-between items-center"
@@ -17,12 +17,12 @@
         (click)="scrollToZero(); closeMenu()"
         class="text-2xl md:text-3xl font-bold text-primary cursor-pointer hover:scale-105 transition"
       >
-        Site<span class="text-accent">Fácil</span><span>Já</span>
+        Site<span class="text-secondary-light">Fácil</span><span>Já</span>
       </h1>
     </div>
 
     <!-- NAV DESKTOP -->
-    <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
+    <nav class="hidden md:flex gap-8 text-text-secondary font-medium">
       <a href="#about" class="relative group"
         >Sobre<span
           class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all group-hover:w-full"
@@ -65,9 +65,9 @@
 
     <!-- BOTÃO HAMBURGER -->
     <button class="md:hidden flex flex-col gap-1" (click)="toggleMenu()">
-      <span class="w-6 h-0.5 bg-gray-800 transition-all"></span>
-      <span class="w-6 h-0.5 bg-gray-800 transition-all"></span>
-      <span class="w-6 h-0.5 bg-gray-800 transition-all"></span>
+      <span class="w-6 h-0.5 bg-icon transition-all"></span>
+      <span class="w-6 h-0.5 bg-icon transition-all"></span>
+      <span class="w-6 h-0.5 bg-icon transition-all"></span>
     </button>
   </div>
 
@@ -75,7 +75,7 @@
   <div
     *ngIf="menuOpen"
     (click)="$event.stopPropagation()"
-    class="fixed w-[100%] bg-gray-50 z-50 flex flex-col items-center justify-center space-y-2 pb-6 text-md font-semibold transition-all"
+    class="fixed w-[100%] bg-bg-soft z-50 flex flex-col items-center justify-center space-y-2 pb-6 text-md font-semibold text-text-secondary transition-all"
   >
     <a href="#about" (click)="closeMenu()">Sobre</a>
     <a href="#services" (click)="closeMenu()">Serviços</a>
@@ -95,4 +95,8 @@
 </header>
 
 <!-- OVERLAY -->
-<div *ngIf="menuOpen" class="fixed inset-0 z-40" (click)="closeMenu()"></div>
+<div
+  *ngIf="menuOpen"
+  class="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+  (click)="closeMenu()"
+></div>

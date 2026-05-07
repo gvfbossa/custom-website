@@ -15,9 +15,6 @@ export class HeroComponent implements OnInit, OnDestroy {
     'assets/images/mockup2.jpeg',
     'assets/images/mockup3.jpeg',
     'assets/images/mockup4.jpeg',
-    'assets/images/mockup5.jpeg',
-    'assets/images/mockup6.jpeg',
-    'assets/images/mockup7.jpeg',
   ];
 
   currentIndex = 0;
@@ -39,7 +36,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   conversion = 0;
-responsive = 0;
+  responsive = 0;
 
 private hasAnimated = false;
 
@@ -55,7 +52,7 @@ ngAfterViewInit(): void {
 }
 
 animateNumbers() {
-  this.animateValue('conversion', 120, 1500);
+  this.animateValue('conversion', 300, 1500);
   this.animateValue('responsive', 100, 1500);
 }
 

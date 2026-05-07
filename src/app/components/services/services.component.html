@@ -1,23 +1,23 @@
 <section
   id="services"
-  class="pt-24 md:pt-32 pb-12 md:pb-14 bg-gradient-to-br from-white via-blue-50 to-white"
+  class="pt-24 md:pt-32 pb-12 md:pb-14 bg-gradient-to-br from-bg-main via-bg-soft to-bg-main"
 >
   <div class="max-w-[95%] md:max-w-5xl mx-auto px-4 md:px-6 text-center">
-    
+
     <!-- Título -->
-    <p class="text-sm font-semibold text-blue-600 tracking-widest uppercase">
+    <p class="text-sm font-semibold text-primary tracking-widest uppercase">
       Seus Serviços e Produtos
     </p>
 
-    <h2 class="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+    <h2 class="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold text-text-main leading-tight">
       Descubra como nossos
       <span class="text-primary">produtos e serviços</span>
-      <span class="text-yellow-400"> transformam seu negócio</span>
+      <span class="text-secondary-light"> transformam seu negócio</span>
     </h2>
 
-    <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+    <p class="mt-4 text-base md:text-lg text-text-secondary max-w-2xl mx-auto">
       Cada solução foi pensada para
-      <span class="font-semibold text-gray-900">aumentar conversão</span>,
+      <span class="font-semibold text-text-main">aumentar conversão</span>,
       fortalecer sua marca e gerar resultados reais.
     </p>
 
@@ -28,7 +28,7 @@
       (mouseleave)="startAutoplay()"
     >
       <div class="relative w-full max-w-2xl min-h-[280px] sm:min-h-[340px] md:min-h-[420px]">
-        
+
         <div
           *ngFor="let service of services; let i = index"
           class="absolute inset-0 transition-all duration-700 ease-in-out"
@@ -36,14 +36,14 @@
             'opacity-100 scale-100 z-10': currentIndex === i,
             'opacity-0 scale-95 z-0': currentIndex !== i,
           }">
-          
+
           <div class="relative rounded-3xl shadow-xl overflow-hidden h-full">
-            
+
             <!-- IMAGEM -->
             <img
               [src]="service.image"
               [alt]="service.title"
-              class="absolute inset-0 w-full h-full "
+              class="absolute inset-0 w-full h-full"
             />
 
             <!-- CONTEÚDO -->
@@ -71,7 +71,7 @@
           class="h-3 rounded-full transition-all duration-300"
           [ngClass]="{
             'bg-primary w-6': currentIndex === i,
-            'bg-gray-300 hover:bg-gray-400 w-3': currentIndex !== i,
+            'bg-border hover:bg-text-muted w-3': currentIndex !== i,
           }"
         ></button>
       </div>

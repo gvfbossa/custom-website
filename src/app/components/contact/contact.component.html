@@ -1,4 +1,4 @@
-<section id="contact" class="pt-20 md:pt-28 pb-10 md:pb-14 bg-silver">
+<section id="contact" class="pt-20 md:pt-28 pb-10 md:pb-14 bg-bg-muted">
   <div class="max-w-7xl mx-auto px-6 space-y-16">
     <!-- Mini-badge -->
     <div>
@@ -10,15 +10,15 @@
 
       <!-- Título -->
       <h2
-        class="mt-3 md:mt-4 text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 leading-snug md:leading-tight text-center md:text-left"
+        class="mt-3 md:mt-4 text-2xl sm:text-3xl md:text-5xl font-bold text-text-main leading-snug md:leading-tight text-center md:text-left"
       >
-        Fale <span class="text-blue-600">conosco</span> e descubra como ter o
-        seu site
+        Fale <span class="text-primary">conosco</span> e descubra como ter o seu
+        site
       </h2>
 
       <!-- Subfrase -->
       <p
-        class="mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl"
+        class="mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-text-secondary max-w-2xl"
       >
         Tire dúvidas, peça orçamento e veja como podemos transformar seus
         resultados.
@@ -30,50 +30,57 @@
         *ngIf="!enviado"
         #contactForm="ngForm"
         (ngSubmit)="onSubmit(contactForm)"
-        class="bg-white py-4 px-6 md:p-12 rounded-2xl shadow-md space-y-6"
+        class="bg-bg-main py-4 px-6 md:p-12 rounded-2xl shadow-md space-y-6"
       >
         <div>
-          <label class="block text-sm font-medium text-gray-700">Nome</label>
+          <label class="block text-sm font-medium text-text-secondary">
+            Nome
+          </label>
+
           <input
             type="text"
             name="nome"
             ngModel
             required
             placeholder="Seu nome"
-            class="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+            class="mt-2 w-full border border-border rounded-lg px-4 py-3 bg-bg-main text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/50"
           />
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-gray-700">Email</label>
+          <label class="block text-sm font-medium text-text-secondary">
+            Email
+          </label>
+
           <input
             type="email"
             name="email"
             ngModel
             required
             placeholder="seu&commat;email.com"
-            class="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+            class="mt-2 w-full border border-border rounded-lg px-4 py-3 bg-bg-main text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/50"
           />
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-gray-700"
-            >Mensagem</label
-          >
+          <label class="block text-sm font-medium text-text-secondary">
+            Mensagem
+          </label>
+
           <textarea
             name="mensagem"
             ngModel
             required
             rows="4"
             placeholder="Digite sua mensagem..."
-            class="mt-2 w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+            class="mt-2 w-full border border-border rounded-lg px-4 py-3 bg-bg-main text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/50"
           ></textarea>
         </div>
 
         <button
           type="submit"
           [disabled]="contactForm.invalid || enviando"
-          class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex items-center justify-center gap-2"
+          class="w-full bg-primary text-white py-3 rounded-lg font-bold shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex items-center justify-center gap-2"
         >
           <span *ngIf="!enviando">Enviar Mensagem</span>
 
@@ -89,12 +96,13 @@
       <!-- Mensagem de sucesso -->
       <div
         *ngIf="enviado"
-        class="bg-white p-12 rounded-2xl shadow-md text-center animate-fade-in"
+        class="bg-bg-main p-12 rounded-2xl shadow-md text-center animate-fade-in"
       >
-        <h4 class="text-2xl font-bold text-gray-900">
+        <h4 class="text-2xl font-bold text-text-main">
           🎉 Mensagem enviada com sucesso!
         </h4>
-        <p class="mt-4 text-gray-700">
+
+        <p class="mt-4 text-text-secondary">
           Obrigado pelo contato! Responderemos em breve.
         </p>
       </div>
@@ -105,7 +113,7 @@
         <a
           href="https://api.whatsapp.com/send/?phone=5511953468808"
           target="_blank"
-          class="flex items-center gap-3 md:gap-4 text-gray-700 hover:text-green-600 transition group"
+          class="flex items-center gap-3 md:gap-4 text-text-secondary hover:text-green-600 transition group"
         >
           <div
             class="w-9 h-9 md:w-11 md:h-11 bg-green-500 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition"
@@ -121,6 +129,7 @@
               />
             </svg>
           </div>
+
           <span class="font-medium text-sm md:font-semibold md:text-base">
             WhatsApp: (11) 95346-8808
           </span>
@@ -129,10 +138,10 @@
         <!-- Email -->
         <a
           href="mailto:contato&commat;bossawebsolutions.com.br"
-          class="flex items-center gap-3 md:gap-4 text-gray-700 hover:text-blue-600 transition group"
+          class="flex items-center gap-3 md:gap-4 text-text-secondary hover:text-primary transition group"
         >
           <div
-            class="w-9 h-9 md:w-12 md:h-12 bg-blue-500 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition"
+            class="w-9 h-9 md:w-12 md:h-12 bg-primary rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition"
           >
             <svg class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24">
               <path d="M2 4h20v16H2V4zm10 7L4 6v12h16V6l-8 5z" />
@@ -147,8 +156,9 @@
         <!-- Redes -->
         <div class="flex items-center gap-3 md:gap-4 pt-1 md:pt-2">
           <a
-            href="https://www.instagram.com/bossawebsolutions/" target="_blank"
-            class="w-9 h-9 md:w-11 md:h-11 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600"
+            href="https://www.instagram.com/bossawebsolutions/"
+            target="_blank"
+            class="w-9 h-9 md:w-11 md:h-11 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition bg-gradient-to-tr from-secondary-light via-pink-500 to-purple-600"
           >
             <svg class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24">
               <path
@@ -158,8 +168,9 @@
           </a>
 
           <a
-            href="https://www.linkedin.com/company/109991620/" target="_blank"
-            class="w-9 h-9 md:w-11 md:h-11 bg-blue-700 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
+            href="https://www.linkedin.com/company/109991620/"
+            target="_blank"
+            class="w-9 h-9 md:w-11 md:h-11 bg-primary-dark rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
           >
             <svg class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24">
               <path
@@ -169,8 +180,9 @@
           </a>
 
           <a
-            href="https://www.facebook.com/people/Bossa-Web-Solutions/61558090378155/" target="_blank"
-            class="w-9 h-9 md:w-11 md:h-11 bg-blue-600 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
+            href="https://www.facebook.com/people/Bossa-Web-Solutions/61558090378155/"
+            target="_blank"
+            class="w-9 h-9 md:w-11 md:h-11 bg-primary rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition"
           >
             <svg class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24">
               <path
@@ -183,7 +195,7 @@
         <!-- Endereço -->
         <div class="flex items-start gap-3 md:gap-4 pt-3 md:pt-4">
           <div
-            class="w-9 h-9 md:w-11 md:h-11 bg-blue-600 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md"
+            class="w-9 h-9 md:w-11 md:h-11 bg-primary rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md"
           >
             <svg
               class="w-4 h-4 md:w-5 md:h-5"
@@ -198,13 +210,15 @@
 
           <div>
             <div
-              class="font-medium md:font-semibold text-gray-900 text-sm md:text-base"
+              class="font-medium md:font-semibold text-text-main text-sm md:text-base"
             >
               Endereço
             </div>
+
             <a
-              href="https://www.google.com/maps/place/S%C3%A3o+Paulo,+State+of+S%C3%A3o+Paulo/@-23.6811632,-47.2191146,10z/data=!3m1!4b1!4m6!3m5!1s0x94ce448183a461d1:0x9ba94b08ff335bae!8m2!3d-23.5557714!4d-46.6395571!16zL20vMDIycGZt?entry=ttu&g_ep=EgoyMDI2MDQyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank"
-              class="text-gray-700 text-sm md:text-base hover:text-blue-600 underline cursor-pointer"
+              href="https://www.google.com/maps/place/S%C3%A3o+Paulo,+State+of+S%C3%A3o+Paulo/"
+              target="_blank"
+              class="text-text-secondary text-sm md:text-base hover:text-primary underline cursor-pointer"
             >
               Rua Endereço do seu Negócio, 10
             </a>
@@ -214,7 +228,7 @@
         <!-- Horário -->
         <div class="flex items-start gap-3 md:gap-4">
           <div
-            class="w-9 h-9 md:w-11 md:h-11 bg-yellow-500 rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md"
+            class="w-9 h-9 md:w-11 md:h-11 bg-secondary rounded-lg md:rounded-xl flex items-center justify-center text-white shadow-md"
           >
             <svg
               class="w-4 h-4 md:w-5 md:h-5"
@@ -229,11 +243,12 @@
 
           <div>
             <div
-              class="font-medium md:font-semibold text-gray-900 text-sm md:text-base"
+              class="font-medium md:font-semibold text-text-main text-sm md:text-base"
             >
               Horário de Funcionamento
             </div>
-            <div class="text-gray-700 text-sm md:text-base">
+
+            <div class="text-text-secondary text-sm md:text-base">
               Seg-Sex: 09:00 - 20:00<br />
               Sáb: 10:00 - 16:00
             </div>

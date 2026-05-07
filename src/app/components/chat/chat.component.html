@@ -1,68 +1,69 @@
 <div class="fixed bottom-6 right-6 z-50">
-
   <!-- BOTÃO -->
   <button
     (click)="toggleChat()"
-    class="bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 md:w-16 md:h-16 rounded-full shadow-lg flex items-center justify-center transition duration-300 animate-bounce">
-
-    <svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 32 32"
-     fill="currentColor"
-     class="w-10 h-10">
-      <path d="M16,2C9.4,2,4,7.3,4,13.9v3.5c0,0.1,0,0.1,0,0.2c0,0.1,0,0.3,0,0.4c0,2.8,2.2,5,5,5c0.6,0,1-0.4,1-1v-8c0-0.6-0.4-1-1-1 
+    class="bg-primary hover:bg-primary-dark text-white w-12 h-12 md:w-16 md:h-16 rounded-full shadow-lg flex items-center justify-center transition duration-300 animate-bounce"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      fill="currentColor"
+      class="w-10 h-10"
+    >
+      <path
+        d="M16,2C9.4,2,4,7.3,4,13.9v3.5c0,0.1,0,0.1,0,0.2c0,0.1,0,0.3,0,0.4c0,2.8,2.2,5,5,5c0.6,0,1-0.4,1-1v-8c0-0.6-0.4-1-1-1 
       c-1.1,0-2.2,0.4-3,1v-0.2C6,8.4,10.5,4,16,4s10,4.4,10,9.9V14c-0.8-0.6-1.9-1-3-1c-0.6,0-1,0.4-1,1v8c0,0.6,0.4,1,1,1 
       c0.7,0,1.4-0.2,2-0.4c-1,2.1-2.8,3.7-5,4.6c0-0.1,0-0.1,0-0.2c0-0.6-0.4-1-1-1h-3c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1 
-      c6.6,0,12-5.2,12-11.6v-1V15v-1.1C28,7.3,22.6,2,16,2z"/>
+      c6.6,0,12-5.2,12-11.6v-1V15v-1.1C28,7.3,22.6,2,16,2z"
+      />
     </svg>
   </button>
-  
-
 
   <!-- CHAT BOX -->
-  <div *ngIf="chatOpen"
-       class="absolute bottom-20 right-0 w-80 bg-white rounded-xl shadow-2xl p-5 space-y-4 animate-fade-in border border-gray-200">
-
+  <div
+    *ngIf="chatOpen"
+    class="absolute bottom-20 right-0 w-80 bg-bg-main rounded-xl shadow-2xl p-5 space-y-4 animate-fade-in border border-border"
+  >
     <!-- HEADER -->
-    <div class="flex items-center justify-between border-b pb-3">
+    <div class="flex items-center justify-between border-b border-border pb-3">
       <div>
-        <div class="text-sm font-semibold text-gray-800">
+        <div class="text-sm font-semibold text-text-main">
           Bossa Web Solutions
         </div>
-        <div class="text-xs text-blue-600">
-          ● Online agora
-        </div>
+
+        <div class="text-xs text-primary">● Online agora</div>
       </div>
 
-      <button (click)="toggleChat()" class="text-gray-400 hover:text-gray-700">
+      <button
+        (click)="toggleChat()"
+        class="text-text-muted hover:text-text-secondary transition"
+      >
         ✕
       </button>
     </div>
 
     <!-- STEP 1 -->
     <div *ngIf="step === 1" class="space-y-3">
-
-      <div class="bg-blue-50 p-3 rounded-lg text-sm text-gray-700">
+      <div class="bg-bg-soft p-3 rounded-lg text-sm text-text-secondary">
         👋 Olá! Quer criar um site profissional para seu negócio?
       </div>
 
       <button
         (click)="nextStep()"
-        class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 py-2 px-4 rounded-lg text-sm font-semibold transition">
+        class="bg-secondary-light hover:bg-secondary text-text-main py-2 px-4 rounded-lg text-sm font-semibold transition"
+      >
         Sim, quero 🚀
       </button>
-
     </div>
 
     <!-- DIGITANDO -->
-    <div *ngIf="isTyping"
-         class="text-xs text-gray-400 animate-pulse">
+    <div *ngIf="isTyping" class="text-xs text-text-muted animate-pulse">
       digitando...
     </div>
 
     <!-- STEP 2 -->
     <div *ngIf="step === 2" class="space-y-3">
-
-      <div class="bg-blue-50 p-3 rounded-lg text-sm text-gray-700">
+      <div class="bg-bg-soft p-3 rounded-lg text-sm text-text-secondary">
         💥 Perfeito! Me conta rapidinho: qual é o seu negócio?
       </div>
 
@@ -70,7 +71,7 @@
         [(ngModel)]="business"
         type="text"
         placeholder="Digite o tipo de seu negócio aqui"
-        class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="w-full border border-border rounded-lg px-3 py-2 text-sm bg-bg-main text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/50"
       />
 
       <button
@@ -78,10 +79,11 @@
         [disabled]="!business || !business.trim()"
         class="w-full py-2 rounded-lg text-sm font-semibold transition"
         [ngClass]="
-            business && business.trim()
-            ? 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer'
-            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-        ">
+          business && business.trim()
+            ? 'bg-primary hover:bg-primary-dark text-white cursor-pointer'
+            : 'bg-bg-muted text-text-muted cursor-not-allowed'
+        "
+      >
         💬 Falar no WhatsApp
       </button>
     </div>

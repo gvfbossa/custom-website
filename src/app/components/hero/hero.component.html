@@ -1,10 +1,10 @@
 <section
   id="hero"
-  class="pt-24 md:pt-32 pb-12 md:pb-14 relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-white"
+  class="pt-24 md:pt-32 pb-12 md:pb-14 relative overflow-hidden bg-gradient-to-br from-bg-main via-bg-soft to-bg-main"
 >
   <!-- Glow -->
   <div
-    class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-blue-200 rounded-full blur-3xl opacity-30"
+    class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-primary-light rounded-full blur-3xl opacity-30"
   ></div>
 
   <div
@@ -14,14 +14,14 @@
     <div class="text-center md:text-left">
       <!-- Badge -->
       <span
-        class="inline-block bg-yellow-400 text-gray-900 text-xs md:text-sm font-semibold px-3 py-1 md:px-4 rounded-full shadow-md"
+        class="inline-block bg-secondary-light text-text-main text-xs md:text-sm font-semibold px-3 py-1 md:px-4 rounded-full shadow-md"
       >
         Modelo 100% Personalizável
       </span>
 
       <!-- Headline -->
       <h1
-        class="mt-4 md:mt-6 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight text-gray-900"
+        class="mt-4 md:mt-6 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight text-text-main"
       >
         Seu negócio merece um site que
         <span class="text-primary">fala por você.</span>
@@ -29,7 +29,7 @@
 
       <!-- TEXTO + CTA (DESKTOP ONLY) -->
       <div class="hidden md:block">
-        <p class="mt-6 text-xl text-gray-600 leading-relaxed">
+        <p class="mt-6 text-xl text-text-secondary leading-relaxed">
           Seja para apresentar seus serviços, mostrar seu produto ou fortalecer
           sua marca, este modelo se adapta ao que você faz e ajuda a transformar
           visitantes em clientes.
@@ -44,7 +44,7 @@
           </a>
         </div>
 
-        <p class="mt-6 text-md text-gray-500">
+        <p class="mt-6 text-md text-text-muted">
           Estrutura profissional • Design moderno • Alta conversão
         </p>
       </div>
@@ -52,8 +52,12 @@
 
     <!-- ===== MOCKUP ===== -->
     <div class="relative w-full cursor-pointer md:mb-12">
-      <div class="bg-white rounded-2xl shadow-2xl p-2 md:p-4 border border-gray-100 hover:scale-105 transition-transform">
-        <div class="relative w-full aspect-[16/9] md:aspect-auto md:h-[380px] rounded-xl overflow-hidden">
+      <div
+        class="bg-bg-main rounded-2xl shadow-2xl p-2 md:p-4 border border-border hover:scale-105 transition-transform"
+      >
+        <div
+          class="relative w-full aspect-[16/9] md:aspect-auto md:h-[380px] rounded-xl overflow-hidden"
+        >
           <img
             *ngFor="let image of images; let i = index"
             [src]="image"
@@ -65,7 +69,7 @@
 
         <!-- MÉTRICAS -->
         <div
-          class="mt-3 md:mt-4 flex items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-gray-800 bg-gray-100 rounded-lg py-2"
+          class="mt-3 md:mt-4 flex items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-text-main bg-bg-muted rounded-lg py-2"
         >
           <!-- Conversão -->
           <div class="flex items-center gap-1 md:gap-2">
@@ -84,11 +88,11 @@
               />
             </svg>
 
-            <span class="text-sm md:text-lg font-bold text-gray-900">
+            <span class="text-sm md:text-lg font-bold text-text-main">
               +{{ conversion }}%
             </span>
 
-            <span class="text-gray-600"> Conversão </span>
+            <span class="text-text-secondary"> Conversão </span>
           </div>
 
           <!-- Responsivo -->
@@ -108,18 +112,18 @@
               />
             </svg>
 
-            <span class="text-sm md:text-lg font-bold text-gray-900">
+            <span class="text-sm md:text-lg font-bold text-text-main">
               {{ responsive }}%
             </span>
 
-            <span class="text-gray-600"> Responsivo </span>
+            <span class="text-text-secondary"> Responsivo </span>
           </div>
         </div>
       </div>
 
       <!-- Badge flutuante -->
       <div
-        class="absolute -bottom-3 -left-4 md:-bottom-4 md:-left-10 bg-yellow-400 text-gray-900 px-3 md:px-4 py-1 md:py-2 rounded-xl shadow-lg text-xs md:text-sm font-semibold"
+        class="absolute -bottom-3 -left-4 md:-bottom-4 md:-left-10 bg-secondary-light text-text-main px-3 md:px-4 py-1 md:py-2 rounded-xl shadow-lg text-xs md:text-sm font-semibold"
       >
         Alta Performance
       </div>
@@ -127,7 +131,7 @@
 
     <!-- ===== TEXTO + CTA (MOBILE ONLY) ===== -->
     <div class="md:hidden text-center">
-      <p class="mt-4 text-base text-gray-600 leading-relaxed">
+      <p class="mt-4 text-base text-text-secondary leading-relaxed">
         Seja para apresentar seus serviços, mostrar seu produto ou fortalecer
         sua marca, este modelo se adapta ao que você faz e ajuda a transformar
         visitantes em clientes.
@@ -142,7 +146,7 @@
         </a>
       </div>
 
-      <p class="mt-4 text-sm text-gray-500">
+      <p class="mt-4 text-sm text-text-muted">
         Estrutura profissional • Design moderno • Alta conversão
       </p>
     </div>

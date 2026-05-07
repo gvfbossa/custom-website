@@ -7,6 +7,7 @@ export default {
           DEFAULT: "rgb(var(--primary) / <alpha-value>)",
           light: "rgb(var(--primary-light) / <alpha-value>)",
           dark: "rgb(var(--primary-dark) / <alpha-value>)",
+          soft: "rgb(var(--primary-soft) / <alpha-value>)",
         },
 
         secondary: {
